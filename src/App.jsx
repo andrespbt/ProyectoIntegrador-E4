@@ -1,5 +1,14 @@
+import { Outlet } from 'react-router-dom';
+import { Header, Footer } from './components';
+
 export const App = () => {
   return (
-    <div className="font-bold">App</div>
-  )
-}
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
+};
