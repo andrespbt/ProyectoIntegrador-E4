@@ -1,11 +1,11 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 import { Button } from './Button';
 import { UserIcon } from './icons';
-import { useState } from 'react';
 
 const buttonClass =
-  'h-10 text-black bg-mainYellow rounded-xl w-[140px] text-base hover:bg-white hover:border-mainYellow hover:border-2 transition-all duration-300 ease-in hover:opacity-100';
+  'h-8 text-black bg-mainYellow rounded-xl w-[140px] text-base hover:bg-white hover:border-mainYellow hover:border-2 transition-all duration-300 ease-in hover:opacity-100';
 const buttonClassMobile = 'h-8 text-black bg-mainYellow rounded-xl text-xs';
 
 export const Header = () => {
@@ -34,7 +34,7 @@ export const Header = () => {
           <img
             src={Logo}
             alt="4Music sharing your passion"
-            className="h-full w-16"
+            className=" h-16 w-24 md:w-32"
           />
         </h1>
       </div>
@@ -49,7 +49,7 @@ export const Header = () => {
           <UserIcon
             viewBox="0 0 15 15"
             width="35px"
-            height="35px"
+            height="30px"
             fill="white"
           />
         </button>
