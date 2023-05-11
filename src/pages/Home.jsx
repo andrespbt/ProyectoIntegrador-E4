@@ -1,6 +1,7 @@
 export const Home = () => {
   return (
-    <div>
+    <div className="h-full flex flex-col">
+      
       {/* Search section */}
 
       <section className="flex gap-8 flex-col items-center py-10 bg-darkGray">
