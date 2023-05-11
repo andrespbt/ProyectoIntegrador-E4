@@ -14,6 +14,12 @@ export const Home = () => {
           />
         </div>
       </section>
+      
+      {/* Brands section */}
+      <section className="py-10 text-center bg-mainBlack">
+        <h2 className="text-2xl font-bold text-white">Marcas</h2>
+        
+      </section>
 
       {/* Category section */}
 
@@ -24,6 +30,12 @@ export const Home = () => {
       {/* Recommendations section */}
       <section  className="py-20 text-center bg-darkGray">
         <h2 className="text-2xl font-bold text-white">Recomendaciones</h2>
+      </section>
+      
+      
+      {/* Benefits section */}
+      <section className="py-10 text-center bg-mainYellow">
+        <h2 className="text-2xl font-bold text-white">Beneficios</h2>
       </section>
     </div>
   );
