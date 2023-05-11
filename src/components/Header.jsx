@@ -4,7 +4,8 @@ import { Button } from './Button';
 import { UserIcon } from './icons';
 import { useState } from 'react';
 
-// const buttonClass = 'h-8 text-black bg-mainYellow rounded-xl';
+const buttonClass =
+  'h-10 text-black bg-mainYellow rounded-xl w-[140px] text-base hover:bg-white hover:border-mainYellow hover:border-2 transition-all duration-300 ease-in hover:opacity-100';
 const buttonClassMobile = 'h-8 text-black bg-mainYellow rounded-xl text-xs';
 
 export const Header = () => {
@@ -15,8 +16,15 @@ export const Header = () => {
     setisModalOpen(!isModalOpen);
   };
 
+  const onRegisterButtonClick = () => {
+    if (isModalOpen) setisModalOpen(false);
+  };
+  const onLoginButtonClick = () => {
+    if (isModalOpen) setisModalOpen(false);
+  };
+
   return (
-    <header className="bg-mainBlack h-[4.2rem] w-full flex items-center justify-between px-4 relative">
+    <header className="bg-mainBlack h-[4.2rem] md:h-[5rem] w-full flex items-center justify-between px-8 md:px-8 fixed top-0">
       {/* Left */}
       <div
         onClick={() => navigate('home')}
@@ -33,37 +41,47 @@ export const Header = () => {
 
       {/* Right */}
 
-      <button
-        className="mr-2 md:hidden"
-        onClick={onModalButtonClick}
-      >
-        <UserIcon
-          viewBox="0 0 15 15"
-          width="35px"
-          height="35px"
-          fill="white"
-        />
-      </button>
+      <div className="relative md:hidden lg:hidden">
+        <button
+          className="mr-2"
+          onClick={onModalButtonClick}
+        >
+          <UserIcon
+            viewBox="0 0 15 15"
+            width="35px"
+            height="35px"
+            fill="white"
+          />
+        </button>
 
-      {isModalOpen && (
-        <div className="gap-6 flex flex-col absolute right-0 top-[4.2rem] bg-mainBlack w-40 p-4 rounded-bl-xl">
-          <Button
-            customClass={buttonClassMobile}
-            text="Crear cuenta"
-            onClick={() => setisModalOpen(false)}
-          />
-          <Button
-            customClass={buttonClassMobile}
-            text="Iniciar Sesión"
-            onClick={() => setisModalOpen(false)}
-          />
-        </div>
-      )}
-{/* 
-      <div className="gap-6 hidden md:flex">
-        <Button customClass={buttonClass} />
-        <Button customClass={buttonClass} />
-      </div> */}
+        {isModalOpen && (
+          <div className="gap-6 flex flex-col absolute right-[-2rem] top-[3rem] bg-mainBlack w-40 p-4 rounded-bl-xl z-50">
+            <Button
+              customClass={buttonClassMobile}
+              text="Crear cuenta"
+              onClick={onRegisterButtonClick}
+            />
+            <Button
+              customClass={buttonClassMobile}
+              text="Iniciar Sesión"
+              onClick={onLoginButtonClick}
+            />
+          </div>
+        )}
+      </div>
+
+      <div className="gap-6 hidden md:flex lg:flex ">
+        <Button
+          customClass={buttonClass}
+          text="Crear cuenta"
+          onClick={onRegisterButtonClick}
+        />
+        <Button
+          customClass={buttonClass}
+          text="Iniciar Sesión"
+          onClick={onLoginButtonClick}
+        />
+      </div>
     </header>
   );
 };
